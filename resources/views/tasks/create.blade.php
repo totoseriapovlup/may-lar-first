@@ -5,13 +5,13 @@
         <!-- Отображение ошибок проверки ввода -->
     @include('common.errors')
     <!-- Форма новой задачи -->
-        <form action="{{ url('task') }}" method="POST" class="form-horizontal">
+        <form action="{{ route('task.store') }}" method="POST" class="form-horizontal">
         {{ csrf_field() }}
         <!-- Имя задачи -->
             <div class="form-group">
                 <label for="task" class="col-sm-3 control-label">Задача</label>
                 <div class="col-sm-6">
-                    <input type="text" name="name" id="task-name" class="form-control">
+                    <input type="text" name="name" id="task" class="form-control" value="{{ old('name') }}">
                 </div>
             </div>
             <!-- Кнопка добавления задачи -->
